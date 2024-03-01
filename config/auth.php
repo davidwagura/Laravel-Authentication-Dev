@@ -1,9 +1,15 @@
 <?php
 return [
-    // rest of the auth.php config
-
+  
+    'defaults' => [
+        'guard' => 'seller', // original 'web'
+        'passwords' => 'users',
+    ],
+  
+    // Rest of auth.php
+  
     'guards' => [
-        'web' => [
+        'seller' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
@@ -13,23 +19,6 @@ return [
             'provider' => 'orders',
         ],
     ],
-
-    // rest of the auth.php config
-    
-    'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,
-        ],
-
-        'orders' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Order::class,
-        ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
-    ],
+  
+    // Rest of auth.php
 ];
